@@ -21,6 +21,5 @@ jobs:
       run: python -m pip install --upgrade requests
     - name: 'Get points'
       env:
-        SMZDM_USERNAME: ${{ secrets.SMZDM_USERNAME }}
-        SMZDM_PASSWORD: ${{ secrets.SMZDM_PASSWORD }}
+        SMZDM_COOKIE: ${{ secrets.SMZDM_COOKIE }}
       run: python smzdm_get_points.py
