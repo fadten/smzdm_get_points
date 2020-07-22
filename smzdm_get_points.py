@@ -3,7 +3,7 @@ import requests
 import json
 
 # 设置Server酱post地址 不需要可以删除
-serverChan = "https://sc.ftqq.com/*****************************************.send"
+# serverChan = "https://sc.ftqq.com/*****************************************.send"
 # 状态地址
 current_url = 'https://zhiyou.smzdm.com/user/info/jsonp_get_current'
 # 签到地址
@@ -39,5 +39,5 @@ else:
     info = '%s 目前积分：%s，增加积分：%s，经验值：%s，金币：%s，威望：%s，等级：%s' % (data['nickname'], checkin['point'], checkin['add_point'], checkin['exp'], checkin['gold'], checkin['prestige'], checkin['rank'])
     print(info)
     # 通过Server酱发送状态 不需要可以删除
-    requests.post(serverChan, data={'text': data['nickname'] + '签到信息', 'desp': info})
+    # requests.post(serverChan, data={'text': data['nickname'] + '签到信息', 'desp': info})
  
