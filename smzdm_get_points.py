@@ -23,12 +23,12 @@ if __name__ == "__main__":
     #password = os.environ["SMZDM_PASSWORD"]    
     userCookie = os.environ["SMZDM_COOKIE"] 
     # 设置Server酱post地址 不需要可以删除
-# serverChan = "https://sc.ftqq.com/*****************************************.send"
-# 状态地址
+    # serverChan = "https://sc.ftqq.com/*****************************************.send"
+    # 状态地址
     current_url = 'https://zhiyou.smzdm.com/user/info/jsonp_get_current'
-# 签到地址
+    # 签到地址
     checkin_url = 'https://zhiyou.smzdm.com/user/checkin/jsonp_checkin'
-# 用用户名和密码登录后获取Cookie
+    # 用用户名和密码登录后获取Cookie
     # userCookie = "**************************************************************"
     headers = {
         'Referer': 'https://www.smzdm.com/',
