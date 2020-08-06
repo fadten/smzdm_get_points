@@ -50,7 +50,7 @@ if __name__ == "__main__":
         else:
             time.sleep( 10 )
             data = req(current_url)  
-            data['checkin']['has_checkin']:
+            data['checkin']['has_checkin']
             info = '%s ：%s 你目前积分(第3次尝试签到)：%s，经验值：%s，金币：%s，碎银子：%s，威望：%s，等级：%s，已经签到：%s天' % (data['sys_date'], data['nickname'], data['point'], data['exp'], data['gold'], data['silver'], data['prestige'], data['level'],data['checkin']['daily_checkin_num'])
             print(info)
 
