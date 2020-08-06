@@ -46,4 +46,11 @@ if __name__ == "__main__":
         # print(checkin)
         info = '%s 目前积分：%s，增加积分：%s，经验值：%s，金币：%s，威望：%s，等级：%s' % (data['nickname'], checkin['point'], checkin['add_point'], checkin['exp'], checkin['gold'], checkin['prestige'], checkin['rank'])
         print(info)
-       
+    if data['checkin']['has_checkin']:
+        info = '%s ：%s 你目前积分(第2次尝试签到)：%s，经验值：%s，金币：%s，碎银子：%s，威望：%s，等级：%s，已经签到：%s天' % (data['sys_date'], data['nickname'], data['point'], data['exp'], data['gold'], data['silver'], data['prestige'], data['level'],data['checkin']['daily_checkin_num'])
+        print(info)
+    else:
+        checkin = req(checkin_url)['data']
+        # print(checkin)
+        info = '%s 目前积分：%s，增加积分：%s，经验值：%s，金币：%s，威望：%s，等级：%s' % (data['nickname'], checkin['point'], checkin['add_point'], checkin['exp'], checkin['gold'], checkin['prestige'], checkin['rank'])
+        print(info)
