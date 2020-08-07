@@ -42,7 +42,7 @@ if __name__ == "__main__":
         time.sleep( 10 )
         data = req(current_url)    
         if data['checkin']['has_checkin']:
-            info = '%s ： %s ：%s 你目前积分：%s，经验值：%s，金币：%s，碎银子：%s，威望：%s，等级：%s，已经签到：%s天' % (anum,data['sys_date'], data['nickname'], data['point'], data['exp'], data['gold'], data['silver'], data['prestige'], data['level'],data['checkin']['daily_checkin_num'])
+            info = '第%s次签到 ： %s ：%s 你目前积分：%s，经验值：%s，金币：%s，碎银子：%s，威望：%s，等级：%s，已经签到：%s天' % (anum,data['sys_date'], data['nickname'], data['point'], data['exp'], data['gold'], data['silver'], data['prestige'], data['level'],data['checkin']['daily_checkin_num'])
             print(info)
             anum = 5000;
         else:
