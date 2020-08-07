@@ -47,7 +47,7 @@ if __name__ == "__main__":
         info = '%s 目前积分(第1次尝试签到)：%s，增加积分：%s，经验值：%s，金币：%s，威望：%s，等级：%s' % (data['nickname'], checkin['point'], checkin['add_point'], checkin['exp'], checkin['gold'], checkin['prestige'], checkin['rank'])
         print(info)
    
-time.sleep( 10 )
+    time.sleep( 10 )
 
     data = req(current_url)    
     if data['checkin']['has_checkin']:
