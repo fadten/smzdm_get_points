@@ -37,24 +37,22 @@ if __name__ == "__main__":
         'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
     }
-    data = req(current_url)    
-    if data['checkin']['has_checkin']:
-        info = '%s ：%s 你目前积分(第1次尝试签到)：%s，经验值：%s，金币：%s，碎银子：%s，威望：%s，等级：%s，已经签到：%s天' % (data['sys_date'], data['nickname'], data['point'], data['exp'], data['gold'], data['silver'], data['prestige'], data['level'],data['checkin']['daily_checkin_num'])
-        print(info)
-    else:
-        checkin = req(checkin_url)['data']
+    anum=1;
+    while anum<5
+        time.sleep( 10 )
+        data = req(current_url)    
+        if data['checkin']['has_checkin']:
+            info = '%s ： %s ：%s 你目前积分：%s，经验值：%s，金币：%s，碎银子：%s，威望：%s，等级：%s，已经签到：%s天' % (anum,data['sys_date'], data['nickname'], data['point'], data['exp'], data['gold'], data['silver'], data['prestige'], data['level'],data['checkin']['daily_checkin_num'])
+            print(info)
+            anum = 5000;
+        else:
+            anum = anum + 1;
+            info = '第%s次尝试签到：'%anum
+            print(info)
+        #checkin = req(checkin_url)['data']
         # print(checkin)
-        info = '%s 目前积分(第1次尝试签到)：%s，增加积分：%s，经验值：%s，金币：%s，威望：%s，等级：%s' % (data['nickname'], checkin['point'], checkin['add_point'], checkin['exp'], checkin['gold'], checkin['prestige'], checkin['rank'])
-        print(info)
+        #info = '%s 目前积分(第1次尝试签到)：%s，增加积分：%s，经验值：%s，金币：%s，威望：%s，等级：%s' % (data['nickname'], checkin['point'], checkin['add_point'], checkin['exp'], checkin['gold'], checkin['prestige'], checkin['rank'])
+        #print(info)
    
-    time.sleep( 10 )
-
-    data = req(current_url)    
-    if data['checkin']['has_checkin']:
-        info = '%s ：%s 你目前积分(第2次尝试签到)：%s，经验值：%s，金币：%s，碎银子：%s，威望：%s，等级：%s，已经签到：%s天' % (data['sys_date'], data['nickname'], data['point'], data['exp'], data['gold'], data['silver'], data['prestige'], data['level'],data['checkin']['daily_checkin_num'])
-        print(info)
-    else:
-        checkin = req(checkin_url)['data']
-        # print(checkin)
-        info = '%s 目前积分(第2次尝试签到)：%s，增加积分：%s，经验值：%s，金币：%s，威望：%s，等级：%s' % (data['nickname'], checkin['point'], checkin['add_point'], checkin['exp'], checkin['gold'], checkin['prestige'], checkin['rank'])
-        print(info)
+            
+    
