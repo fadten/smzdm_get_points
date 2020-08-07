@@ -42,14 +42,15 @@ if __name__ == "__main__":
         time.sleep( 10 )
         data = req(current_url)    
         if data['checkin']['has_checkin']:
-            info = '第%s次签到 ： %s ：%s 你目前积分：%s，经验值：%s，金币：%s，碎银子：%s，威望：%s，等级：%s，已经签到：%s天' % (anum,data['sys_date'], data['nickname'], data['point'], data['exp'], data['gold'], data['silver'], data['prestige'], data['level'],data['checkin']['daily_checkin_num'])
+            info = '第%s次检查签到状态 ： %s ：%s 你目前积分：%s，经验值：%s，金币：%s，碎银子：%s，威望：%s，等级：%s，已经签到：%s天' % (anum,data['sys_date'], data['nickname'], data['point'], data['exp'], data['gold'], data['silver'], data['prestige'], data['level'],data['checkin']['daily_checkin_num'])
             print(info)
             anum = 5000;
-        else:
-            anum = anum + 1;
+        else:            
+            time.sleep( 10 )
+            checkin = req(checkin_url)['data']
             info = '第%s次尝试签到：'%anum
-            print(info)
-        #checkin = req(checkin_url)['data']
+            print(info)            
+            anum = anum + 1;
         # print(checkin)
         #info = '%s 目前积分(第1次尝试签到)：%s，增加积分：%s，经验值：%s，金币：%s，威望：%s，等级：%s' % (data['nickname'], checkin['point'], checkin['add_point'], checkin['exp'], checkin['gold'], checkin['prestige'], checkin['rank'])
         #print(info)
